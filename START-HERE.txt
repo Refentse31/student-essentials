@@ -1,0 +1,113 @@
+STUDENT ESSENTIALS DONATION PLATFORM
+How to run this website on your own PC  (no Docker needed)
+================================================================
+
+
+WHAT IS IN THIS FOLDER
+----------------------
+This is the complete code for your website. The database (where your
+accounts, donations, requests and pictures live) stays online, so
+nothing on your PC needs to be installed except one free program.
+
+
+STEP 1 - Install Node.js (one time only)
+----------------------------------------
+1. Go to  https://nodejs.org
+2. Click the big green "LTS" button to download it.
+3. Open the downloaded file and click Next, Next, Next until it finishes.
+   (If your PC asks for a password, ask an adult to type it.)
+4. Check it worked: open the Start menu, type "cmd" and press Enter.
+   A black window opens. Type this and press Enter:
+
+       node -v
+
+   You should see something like v22.x.x. If you see that, you are done.
+
+
+STEP 2 - Put the code somewhere easy to find
+--------------------------------------------
+1. Find the file you downloaded (it is a .zip file, probably in Downloads).
+2. Right-click it and choose "Extract All", then Extract.
+3. A folder called "student-essentials" appears. Move it somewhere simple,
+   for example:  C:\student-essentials
+   (Keep the name short and with no spaces - it makes life easier.)
+
+
+STEP 3 - Open the black window IN that folder
+---------------------------------------------
+The easiest way:
+1. Open the "student-essentials" folder so you can see the files inside.
+2. Click in the empty space of the address bar at the top (the bar that
+   shows the folder path), so the path turns blue/highlighted.
+3. Type  cmd  and press Enter.
+
+A black window opens that is already pointed at your project folder.
+You can tell because the top line shows the folder name.
+
+
+STEP 4 - Install the pieces the website needs (one time only)
+-------------------------------------------------------------
+In the black window type this and press Enter:
+
+    npm install
+
+This takes a few minutes and prints lots of lines. That is normal.
+Wait until you get the blinking cursor back.
+
+If it shows red text about a "script" or a package that could not be
+downloaded, tell me exactly what the red text says.
+
+
+STEP 5 - Start the website
+--------------------------
+In the same black window type:
+
+    npm run dev
+
+After a few seconds you will see lines like:
+
+    ➜  Local:   http://localhost:8080/   (or a similar address)
+
+Open your browser (Chrome, Edge, whatever you use), and type that exact
+address that appeared in the black window (usually http://localhost:8080
+or http://localhost:5173)
+
+Your website loads. It looks and works exactly like the preview, because
+it is reading the same database online.
+
+
+STEP 6 - Stop the website
+-------------------------
+Go back to the black window and press:  Ctrl + C
+Then close the window.
+
+Next time you want to use the website, you only need Steps 3 and 5.
+
+
+IMPORTANT THINGS TO KNOW
+------------------------
+* The database is the SAME one the online preview uses. So if you add a
+  donation while running on your PC, it also shows on the online site.
+  They are not two separate copies - it is one database shared by both.
+
+* The .env file in this folder holds the database address and key. It is
+  already filled in, so you do not need to change anything.
+
+* The AI features (item recommendations, predictions, smart reports) only
+  work when the site is published online, not while running on your PC.
+
+* Everything else works: signing in, uploading donation pictures, profile
+  photos, messages, approvals, admin reports, PDF downloads.
+
+* Your first registered account on a brand new database becomes the admin.
+  Right now the database already has your accounts, so just sign in with
+  the email and password you already made.
+
+
+IF SOMETHING GOES WRONG
+-----------------------
+Tell me three things and I will fix it with you:
+1. Which step you were on.
+2. The exact command you typed.
+3. The exact text the black window showed (copy it: right-click inside the
+   window, Select All, Enter, then paste it into the chat).
