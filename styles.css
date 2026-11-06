@@ -1,0 +1,167 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary-glow: var(--primary-glow);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-success: var(--success);
+  --color-success-foreground: var(--success-foreground);
+  --color-warning: var(--warning);
+  --color-warning-foreground: var(--warning-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --font-display: "Sora", system-ui, sans-serif;
+  --font-sans: "Manrope", system-ui, sans-serif;
+
+  --animate-float-slow: float-slow 26s ease-in-out infinite;
+  --animate-float-slower: float-slower 34s ease-in-out infinite;
+
+  @keyframes float-slow {
+    0%, 100% { transform: translate(0, 0); }
+    50% { transform: translate(10px, -12px); }
+  }
+  @keyframes float-slower {
+    0%, 100% { transform: translate(0, 0); }
+    50% { transform: translate(-12px, 10px); }
+  }
+}
+
+/* ================================================================
+   Emerald Prestige: deep emerald institutional base, muted gold accent.
+   Restrained surfaces, tight radii, low-glow shadows.
+   ================================================================ */
+:root {
+  --radius: 0.5rem;
+
+  /* Deep emerald canvas */
+  --background: oklch(0.21 0.045 165);
+  --foreground: oklch(0.96 0.012 150);
+
+  /* Solid, quiet surfaces (no heavy glass) */
+  --card: oklch(0.25 0.045 165);
+  --card-foreground: oklch(0.96 0.012 150);
+  --popover: oklch(0.24 0.045 165);
+  --popover-foreground: oklch(0.96 0.012 150);
+
+  /* Emerald primary */
+  --primary: oklch(0.6 0.11 163);
+  --primary-foreground: oklch(0.15 0.04 165);
+  --primary-glow: oklch(0.7 0.1 163);
+
+  --secondary: oklch(0.29 0.04 165);
+  --secondary-foreground: oklch(0.96 0.012 150);
+
+  --muted: oklch(0.28 0.03 165);
+  --muted-foreground: oklch(0.74 0.02 155);
+
+  /* Muted gold */
+  --accent: oklch(0.76 0.11 88);
+  --accent-foreground: oklch(0.2 0.05 88);
+
+  --success: oklch(0.68 0.12 155);
+  --success-foreground: oklch(0.15 0.04 155);
+
+  --warning: oklch(0.78 0.12 82);
+  --warning-foreground: oklch(0.2 0.05 82);
+
+  --destructive: oklch(0.58 0.17 27);
+  --destructive-foreground: oklch(0.98 0 0);
+
+  --border: oklch(1 0 0 / 0.1);
+  --input: oklch(1 0 0 / 0.12);
+  --ring: oklch(0.6 0.11 163);
+
+  /* Analyst-style series: one hue family + gold, no rainbow */
+  --chart-1: oklch(0.62 0.1 163);
+  --chart-2: oklch(0.76 0.1 88);
+  --chart-3: oklch(0.5 0.07 190);
+  --chart-4: oklch(0.72 0.05 155);
+  --chart-5: oklch(0.42 0.06 165);
+
+  --sidebar: oklch(0.18 0.04 166);
+  --sidebar-foreground: oklch(0.93 0.012 150);
+  --sidebar-primary: oklch(0.6 0.11 163);
+  --sidebar-primary-foreground: oklch(0.15 0.04 165);
+  --sidebar-accent: oklch(0.25 0.045 165);
+  --sidebar-accent-foreground: oklch(0.96 0.012 150);
+  --sidebar-border: oklch(1 0 0 / 0.07);
+  --sidebar-ring: oklch(0.6 0.11 163);
+
+  --gradient-primary: linear-gradient(135deg, oklch(0.45 0.1 165) 0%, oklch(0.62 0.1 160) 100%);
+  --gradient-hero: linear-gradient(135deg, oklch(0.2 0.045 168) 0%, oklch(0.28 0.06 160) 100%);
+  --shadow-soft: 0 1px 2px oklch(0 0 0 / 0.3), 0 6px 16px -12px oklch(0 0 0 / 0.5);
+  --shadow-card: 0 1px 0 oklch(1 0 0 / 0.04), 0 8px 24px -18px oklch(0 0 0 / 0.6);
+  --shadow-elegant: 0 20px 50px -30px oklch(0 0 0 / 0.7);
+}
+
+.dark {
+  /* dark class inherits root — already dark */
+}
+
+@layer base {
+  * { border-color: var(--color-border); }
+  html, body { font-family: var(--font-sans); }
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3, h4 { font-family: var(--font-display); letter-spacing: -0.015em; font-weight: 600; }
+  /* Charts: hairline axes and gridlines, muted labels — BI-tool register */
+  .recharts-cartesian-axis-line,
+  .recharts-cartesian-axis-tick-line { stroke: var(--color-border); }
+  .recharts-cartesian-grid line { stroke: color-mix(in oklab, var(--foreground) 10%, transparent); }
+  .recharts-text { fill: var(--color-muted-foreground); font-size: 11px; }
+  .recharts-default-legend { font-size: 11px; }
+}
+
+@utility bg-gradient-primary { background-image: var(--gradient-primary); }
+@utility bg-gradient-hero { background-image: var(--gradient-hero); }
+@utility shadow-soft { box-shadow: var(--shadow-soft); }
+@utility shadow-card { box-shadow: var(--shadow-card); }
+@utility shadow-elegant { box-shadow: var(--shadow-elegant); }
+
+/* Panel surface — solid, quiet, hairline border. Kept as `glass` for
+   compatibility with existing usages across the app. */
+@utility glass {
+  background: color-mix(in oklab, var(--card) 94%, transparent);
+  backdrop-filter: blur(6px);
+  border: 1px solid var(--color-border);
+}
